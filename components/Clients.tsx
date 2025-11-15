@@ -34,16 +34,16 @@ export default function Clients() {
             {clients.map((client, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 flex items-center justify-center w-[100px] sm:w-[140px] md:w-[180px] lg:w-[200px] h-[80px] sm:h-[100px] md:h-[120px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
+                className="flex-shrink-0 flex items-center justify-center w-[80px] sm:w-[110px] md:w-[140px] lg:w-[160px] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[100px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
               >
-                <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
+                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
                   <Image
                     src={client.logo}
                     alt={client.name}
                     fill
                     className="object-contain rounded-lg"
                     style={{ objectFit: 'contain', objectPosition: 'center' }}
-                    sizes="(max-width: 640px) 100px, (max-width: 768px) 140px, (max-width: 1024px) 180px, 200px"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 110px, (max-width: 1024px) 140px, 160px"
                   />
                 </div>
               </div>
@@ -52,16 +52,16 @@ export default function Clients() {
             {clients.map((client, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 flex items-center justify-center w-[100px] sm:w-[140px] md:w-[180px] lg:w-[200px] h-[80px] sm:h-[100px] md:h-[120px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
+                className="flex-shrink-0 flex items-center justify-center w-[80px] sm:w-[110px] md:w-[140px] lg:w-[160px] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[100px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
               >
-                <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
+                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
                   <Image
                     src={client.logo}
                     alt={client.name}
                     fill
                     className="object-contain rounded-lg"
                     style={{ objectFit: 'contain', objectPosition: 'center' }}
-                    sizes="(max-width: 640px) 100px, (max-width: 768px) 140px, (max-width: 1024px) 180px, 200px"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 110px, (max-width: 1024px) 140px, 160px"
                   />
                 </div>
               </div>
