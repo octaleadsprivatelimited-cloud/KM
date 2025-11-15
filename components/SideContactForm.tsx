@@ -19,21 +19,30 @@ export default function SideContactForm() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mblqyzbz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          message: formData.message,
+        }),
       })
 
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', phone: '', message: '' })
       } else {
+        const data = await response.json()
+        console.error('Formspree error:', data)
         setSubmitStatus('error')
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

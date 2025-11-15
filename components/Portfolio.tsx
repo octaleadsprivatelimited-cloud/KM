@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface PortfolioItem {
   id: number
@@ -94,9 +95,10 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="bg-black border border-white rounded-lg overflow-hidden hover:border-white/80 transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer"
+              href={`/portfolio/${item.id}`}
+              className="bg-black border border-white rounded-lg overflow-hidden hover:border-white/80 transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer block"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -118,7 +120,7 @@ export default function Portfolio() {
                 </h3>
                 <p className="text-white text-sm">{item.description}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
