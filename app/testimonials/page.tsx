@@ -101,7 +101,7 @@ export default function TestimonialsPage() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-black border border-primary-800 rounded-lg p-6 hover:border-primary-600 transition-all duration-300"
+              className="bg-black border border-white rounded-lg p-6 hover:border-white/80 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (

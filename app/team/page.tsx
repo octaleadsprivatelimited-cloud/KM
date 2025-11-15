@@ -60,7 +60,7 @@ export default function TeamPage() {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="bg-black border border-primary-800 rounded-lg overflow-hidden hover:border-primary-600 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 group cursor-pointer"
+              className="bg-black border border-white rounded-lg overflow-hidden hover:border-white/80 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 group cursor-pointer"
             >
               <div className="relative h-64 w-full overflow-hidden">
                 <Image

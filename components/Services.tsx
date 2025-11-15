@@ -110,7 +110,7 @@ export default function Services() {
             <Link
               key={index}
               href={service.href}
-              className="relative bg-black border border-primary-800 rounded-lg overflow-hidden hover:border-primary-500 transition-all duration-300 transform hover:-translate-y-2 block group"
+              className="relative bg-black border border-white rounded-lg overflow-hidden hover:border-white/80 transition-all duration-300 transform hover:-translate-y-2 block group"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image

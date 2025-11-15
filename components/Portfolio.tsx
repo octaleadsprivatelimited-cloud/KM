@@ -84,7 +84,7 @@ export default function Portfolio() {
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === category
                   ? 'bg-primary-500 text-black shadow-lg'
-                  : 'bg-black border border-primary-800 text-white hover:border-primary-500'
+                  : 'bg-black border border-white text-white hover:border-white/80'
               }`}
             >
               {category}
@@ -96,7 +96,7 @@ export default function Portfolio() {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="bg-black border border-primary-800 rounded-lg overflow-hidden hover:border-primary-500 transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer"
+              className="bg-black border border-white rounded-lg overflow-hidden hover:border-white/80 transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image

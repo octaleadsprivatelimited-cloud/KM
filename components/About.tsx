@@ -22,19 +22,19 @@ export default function About() {
 
         {/* Key Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+          <div className="bg-black border border-white rounded-lg p-6 text-center">
             <h3 className="text-2xl font-bold text-primary-300 mb-3">Boost Your Business</h3>
             <p className="text-white">
               When it comes to sustainability and corporate responsibility, we believe the normal rules of business.
             </p>
           </div>
-          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+          <div className="bg-black border border-white rounded-lg p-6 text-center">
             <h3 className="text-2xl font-bold text-primary-300 mb-3">Filtering Business Data</h3>
             <p className="text-white">
               The industry has recognized us for our consistent endeavors to provide end-to-end customized solutions.
             </p>
           </div>
-          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+          <div className="bg-black border border-white rounded-lg p-6 text-center">
             <h3 className="text-2xl font-bold text-primary-300 mb-3">We Are Katyani Media</h3>
             <p className="text-white">
               Your Trusted Partner in Experiential Advertising
@@ -48,25 +48,25 @@ export default function About() {
             Why Choose Us
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-black border border-primary-800 rounded-lg p-6">
+            <div className="bg-black border border-white rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary-300 mb-3">Campaign Innovation</h3>
               <p className="text-white text-sm">
                 We build bold, creative, on-ground brand moments that stand out and inspire across cities.
               </p>
             </div>
-            <div className="bg-black border border-primary-800 rounded-lg p-6">
+            <div className="bg-black border border-white rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary-300 mb-3">Real-Time Execution</h3>
               <p className="text-white text-sm">
                 We track each campaign live and activate on time with strong, dedicated ground teams.
               </p>
             </div>
-            <div className="bg-black border border-primary-800 rounded-lg p-6">
+            <div className="bg-black border border-white rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary-300 mb-3">Audience-Centric Approach</h3>
               <p className="text-white text-sm">
                 We create powerful messages that connect with real people in real places for real impact.
               </p>
             </div>
-            <div className="bg-black border border-primary-800 rounded-lg p-6">
+            <div className="bg-black border border-white rounded-lg p-6">
               <h3 className="text-xl font-bold text-primary-300 mb-3">Scalable Reach</h3>
               <p className="text-white text-sm">
                 We scale activations quickly and consistently from one area to hundreds of cities with ease.

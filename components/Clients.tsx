@@ -36,7 +36,7 @@ export default function Clients() {
                 key={`first-${index}`}
                 className="flex-shrink-0 flex items-center justify-center w-[80px] sm:w-[110px] md:w-[140px] lg:w-[160px] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[100px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
               >
-                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
+                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-white/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
                   <Image
                     src={client.logo}
                     alt={client.name}
@@ -54,7 +54,7 @@ export default function Clients() {
                 key={`second-${index}`}
                 className="flex-shrink-0 flex items-center justify-center w-[80px] sm:w-[110px] md:w-[140px] lg:w-[160px] h-[60px] sm:h-[80px] md:h-[100px] lg:h-[100px] mx-1.5 sm:mx-4 md:mx-6 lg:mx-8"
               >
-                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-primary-800/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
+                <div className="relative w-full h-full transition-all duration-300 opacity-90 hover:opacity-100 rounded-lg border border-white/50 p-2 sm:p-3 md:p-4 bg-black/30 overflow-hidden">
                   <Image
                     src={client.logo}
                     alt={client.name}

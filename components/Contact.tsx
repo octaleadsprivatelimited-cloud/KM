@@ -52,21 +52,21 @@ export default function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Contact Info - Minimal Design */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <a href="tel:+919390809997" className="group flex flex-col items-center text-center p-6 border border-primary-800 rounded-lg hover:border-primary-500 transition-all duration-300 hover:bg-primary-900/10">
+          <a href="tel:+919390809997" className="group flex flex-col items-center text-center p-6 border border-white rounded-lg hover:border-white/80 transition-all duration-300 hover:bg-primary-900/10">
             <div className="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center mb-3 group-hover:bg-primary-500/30 transition-colors">
               <FiPhone className="text-primary-400 group-hover:text-primary-300" size={20} />
             </div>
             <p className="text-primary-400 text-sm mb-1">Phone</p>
             <p className="text-white font-medium">+91-9390809997</p>
           </a>
-          <a href="mailto:info@katyanimedia.com" className="group flex flex-col items-center text-center p-6 border border-primary-800 rounded-lg hover:border-primary-500 transition-all duration-300 hover:bg-primary-900/10">
+          <a href="mailto:info@katyanimedia.com" className="group flex flex-col items-center text-center p-6 border border-white rounded-lg hover:border-white/80 transition-all duration-300 hover:bg-primary-900/10">
             <div className="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center mb-3 group-hover:bg-primary-500/30 transition-colors">
               <FiMail className="text-primary-400 group-hover:text-primary-300" size={20} />
             </div>
             <p className="text-primary-400 text-sm mb-1">Email</p>
             <p className="text-white font-medium text-sm">info@katyanimedia.com</p>
           </a>
-          <div className="group flex flex-col items-center text-center p-6 border border-primary-800 rounded-lg hover:border-primary-500 transition-all duration-300 hover:bg-primary-900/10">
+          <div className="group flex flex-col items-center text-center p-6 border border-white rounded-lg hover:border-white/80 transition-all duration-300 hover:bg-primary-900/10">
             <div className="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center mb-3 group-hover:bg-primary-500/30 transition-colors">
               <FiMapPin className="text-primary-400 group-hover:text-primary-300" size={20} />
             </div>
