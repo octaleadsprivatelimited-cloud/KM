@@ -50,13 +50,13 @@ export default function SideContactForm() {
   return (
     <div className="bg-black border border-primary-800 p-6 rounded-lg shadow-lg sticky top-24">
       <h3 className="text-xl font-bold text-primary-300 mb-4">Get a Quote</h3>
-      <p className="text-sm text-primary-200 mb-6">
+      <p className="text-sm text-white mb-6">
         Fill out the form below and we'll get back to you soon.
       </p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="side-name" className="block text-sm font-medium text-primary-200 mb-1">
+          <label htmlFor="side-name" className="block text-sm font-medium text-white mb-1">
             Name
           </label>
           <input
@@ -66,12 +66,12 @@ export default function SideContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-primary-200 placeholder-primary-600"
+            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-white placeholder-primary-600"
             placeholder="Your Name"
           />
         </div>
         <div>
-          <label htmlFor="side-email" className="block text-sm font-medium text-primary-200 mb-1">
+          <label htmlFor="side-email" className="block text-sm font-medium text-white mb-1">
             Email
           </label>
           <input
@@ -81,12 +81,12 @@ export default function SideContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-primary-200 placeholder-primary-600"
+            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-white placeholder-primary-600"
             placeholder="your.email@example.com"
           />
         </div>
         <div>
-          <label htmlFor="side-phone" className="block text-sm font-medium text-primary-200 mb-1">
+          <label htmlFor="side-phone" className="block text-sm font-medium text-white mb-1">
             Phone
           </label>
           <input
@@ -95,12 +95,12 @@ export default function SideContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-primary-200 placeholder-primary-600"
+            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-sm text-white placeholder-primary-600"
             placeholder="+1 (234) 567-890"
           />
         </div>
         <div>
-          <label htmlFor="side-message" className="block text-sm font-medium text-primary-200 mb-1">
+          <label htmlFor="side-message" className="block text-sm font-medium text-white mb-1">
             Message
           </label>
           <textarea
@@ -110,7 +110,7 @@ export default function SideContactForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all resize-none text-sm text-primary-200 placeholder-primary-600"
+            className="w-full px-3 py-2 bg-black border border-primary-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all resize-none text-sm text-white placeholder-primary-600"
             placeholder="Tell us about your requirements..."
           />
         </div>
@@ -123,7 +123,7 @@ export default function SideContactForm() {
           <FiSend size={16} />
         </button>
         {submitStatus === 'success' && (
-          <div className="bg-primary-900/50 border border-primary-700 text-primary-200 px-3 py-2 rounded-lg text-sm">
+          <div className="bg-primary-900/50 border border-primary-700 text-white px-3 py-2 rounded-lg text-sm">
             Thank you! Your message has been sent successfully.
           </div>
         )}
@@ -136,11 +136,11 @@ export default function SideContactForm() {
 
       <div className="mt-6 pt-6 border-t border-primary-800">
         <div className="space-y-3">
-          <a href="tel:+1234567890" className="flex items-center space-x-2 text-primary-200 hover:text-primary-400 transition-colors text-sm">
+          <a href="tel:+919390809997" className="flex items-center space-x-2 text-white hover:text-primary-400 transition-colors text-sm">
             <FiPhone size={16} />
-            <span>+1 (234) 567-890</span>
+            <span>+91-9390809997</span>
           </a>
-          <a href="mailto:info@katyanimedia.com" className="flex items-center space-x-2 text-primary-200 hover:text-primary-400 transition-colors text-sm">
+          <a href="mailto:info@katyanimedia.com" className="flex items-center space-x-2 text-white hover:text-primary-400 transition-colors text-sm">
             <FiMail size={16} />
             <span>info@katyanimedia.com</span>
           </a>

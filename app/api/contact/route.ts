@@ -1,24 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
-    const { name, email, phone, message } = body
-
-    // Validate required fields
-    if (!name || !email || !message) {
+    let body
+    try {
+      body = await request.json()
+    } catch (parseError) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Invalid JSON in request body' },
         { status: 400 }
       )
     }
 
-    // Here you would typically:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Integrate with email service (SendGrid, Mailgun, etc.)
-    
-    // For now, we'll just log it and return success
+    const { name, email, phone, message } = body || {}
+
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'Missing required fields: name, email, and message are required' },
+        { status: 400 }
+      )
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      )
+    }
+
     console.log('Contact form submission:', { name, email, phone, message })
 
     // Simulate processing delay
@@ -30,8 +44,9 @@ export async function POST(request: NextRequest) {
     )
   } catch (error) {
     console.error('Error processing contact form:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred'
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: `Internal server error: ${errorMessage}` },
       { status: 500 }
     )
   }

@@ -1,4 +1,5 @@
 import SideContactForm from '@/components/SideContactForm'
+import Image from 'next/image'
 import { FiNavigation } from 'react-icons/fi'
 
 export const metadata = {
@@ -8,17 +9,23 @@ export const metadata = {
 
 export default function MetroAdvertisingPage() {
   return (
-    <div className="w-full pt-24 pb-16 bg-black">
-      {/* Hero Image Section */}
-      <section className="relative h-64 bg-gradient-to-r from-primary-900 to-primary-800 mb-12">
-        <div className="absolute inset-0 bg-black/50"></div>
+    <div className="w-full pb-16 bg-black">
+      <section className="relative h-[500px] mb-12 overflow-hidden -mt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80"
+          alt="Metro Advertising - Reach Urban Commuters Daily"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <FiNavigation className="text-primary-400" size={48} />
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-300">Metro Advertising</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">Metro Advertising</h1>
             </div>
-            <p className="text-lg text-primary-200">Reach Urban Commuters Daily</p>
+            <p className="text-lg text-white">Reach Urban Commuters Daily</p>
           </div>
         </div>
       </section>
@@ -26,26 +33,29 @@ export default function MetroAdvertisingPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-black border border-primary-800 rounded-lg shadow-md p-8">
-              {/* Service Image */}
+            <div className="bg-black border border-primary-800 rounded-lg p-8">
               <div className="mb-8">
-                <div className="relative w-full h-64 bg-gradient-to-br from-primary-900/50 to-primary-800/30 border border-primary-800 rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <FiNavigation className="text-primary-400" size={120} />
-                  </div>
+                <div className="relative w-full h-80 rounded-lg overflow-hidden border border-primary-800">
+                  <Image
+                    src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+                    alt="Metro Advertising Solutions"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <p className="text-primary-200 text-sm font-medium">Metro Advertising Solutions</p>
+                    <p className="text-white text-lg font-semibold">Metro Advertising Solutions</p>
                   </div>
                 </div>
               </div>
 
               <div className="prose max-w-none">
-                <p className="text-lg text-primary-200 mb-6">
+                <p className="text-lg text-white mb-6">
                   Metro advertising offers unparalleled reach to urban commuters who use public transportation daily. Our metro advertising solutions help your brand connect with a captive audience during their daily commute, ensuring high visibility and engagement in one of the most effective transit advertising mediums.
                 </p>
 
                 <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Why Choose Metro Advertising?</h2>
-                <ul className="list-disc list-inside space-y-2 text-primary-200 mb-6">
+                <ul className="list-disc list-inside space-y-2 text-white mb-6">
                   <li>Massive daily commuter reach</li>
                   <li>Captive audience during travel time</li>
                   <li>High-frequency exposure opportunities</li>
@@ -58,25 +68,25 @@ export default function MetroAdvertisingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Station Advertising</h3>
-                    <p className="text-sm text-primary-200">Platform displays, escalator ads, and station branding</p>
+                    <p className="text-sm text-white">Platform displays, escalator ads, and station branding</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Train Advertising</h3>
-                    <p className="text-sm text-primary-200">Interior and exterior train wrap advertising</p>
+                    <p className="text-sm text-white">Interior and exterior train wrap advertising</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Digital Displays</h3>
-                    <p className="text-sm text-primary-200">LED screens and digital boards at metro stations</p>
+                    <p className="text-sm text-white">LED screens and digital boards at metro stations</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Strategic Placement</h3>
-                    <p className="text-sm text-primary-200">High-traffic station selection for maximum visibility</p>
+                    <p className="text-sm text-white">High-traffic station selection for maximum visibility</p>
                   </div>
                 </div>
 
                 <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Benefits</h2>
                 <div className="bg-primary-900/50 border border-primary-800 p-6 rounded-lg mb-6">
-                  <ul className="space-y-2 text-primary-200">
+                  <ul className="space-y-2 text-white">
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
                       <span>Reach thousands of daily commuters consistently</span>
@@ -100,7 +110,7 @@ export default function MetroAdvertisingPage() {
                   </ul>
                 </div>
 
-                <p className="text-primary-200">
+                <p className="text-white">
                   Get in touch to explore metro advertising opportunities and reach urban commuters effectively.
                 </p>
               </div>

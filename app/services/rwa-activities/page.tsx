@@ -1,4 +1,5 @@
 import SideContactForm from '@/components/SideContactForm'
+import Image from 'next/image'
 import { FiUsers } from 'react-icons/fi'
 
 export const metadata = {
@@ -8,17 +9,23 @@ export const metadata = {
 
 export default function RWAActivitiesPage() {
   return (
-    <div className="w-full pt-24 pb-16 bg-black">
-      {/* Hero Image Section */}
-      <section className="relative h-64 bg-gradient-to-r from-primary-900 to-primary-800 mb-12">
-        <div className="absolute inset-0 bg-black/50"></div>
+    <div className="w-full pb-16 bg-black">
+      <section className="relative h-[500px] mb-12 overflow-hidden -mt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80"
+          alt="RWA Activities - Community Engagement & Local Marketing"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <FiUsers className="text-primary-400" size={48} />
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-300">RWA Activities</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">RWA Activities</h1>
             </div>
-            <p className="text-lg text-primary-200">Community Engagement & Local Marketing</p>
+            <p className="text-lg text-white">Community Engagement & Local Marketing</p>
           </div>
         </div>
       </section>
@@ -26,57 +33,60 @@ export default function RWAActivitiesPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-black border border-primary-800 rounded-lg shadow-md p-8">
-              {/* Service Image */}
+            <div className="bg-black border border-primary-800 rounded-lg p-8">
               <div className="mb-8">
-                <div className="relative w-full h-64 bg-gradient-to-br from-primary-900/50 to-primary-800/30 border border-primary-800 rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <FiUsers className="text-primary-400" size={120} />
-                  </div>
+                <div className="relative w-full h-80 rounded-lg overflow-hidden border border-primary-800">
+                  <Image
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+                    alt="RWA Activities & Marketing Solutions"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <p className="text-primary-200 text-sm font-medium">RWA Activities & Marketing</p>
+                    <p className="text-white text-lg font-semibold">RWA Activities & Marketing Solutions</p>
                   </div>
                 </div>
               </div>
 
               <div className="prose max-w-none">
-                <p className="text-lg text-primary-200 mb-6">
+                <p className="text-lg text-white mb-6">
                   Resident Welfare Association (RWA) activities provide an excellent platform for brands to connect with local communities. Our RWA marketing services help you engage with residents through community events, activities, and targeted campaigns, building trust and brand loyalty at the grassroots level.
                 </p>
 
-                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Why Choose RWA Activities Marketing?</h2>
-                <ul className="list-disc list-inside space-y-2 text-primary-200 mb-6">
-                  <li>Direct engagement with local communities</li>
-                  <li>Trust-building through community involvement</li>
-                  <li>Targeted reach to specific residential areas</li>
-                  <li>Cost-effective local market penetration</li>
+                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Why Choose RWA Activities?</h2>
+                <ul className="list-disc list-inside space-y-2 text-white mb-6">
+                  <li>Direct access to residential communities</li>
+                  <li>Trusted and credible marketing channel</li>
+                  <li>High engagement in community settings</li>
+                  <li>Targeted local market penetration</li>
+                  <li>Cost-effective community marketing</li>
                   <li>Long-term brand relationship building</li>
-                  <li>Word-of-mouth marketing amplification</li>
                 </ul>
 
-                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Our RWA Activity Services</h2>
+                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Our RWA Marketing Services</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
-                    <h3 className="font-semibold text-primary-300 mb-2">Community Events</h3>
-                    <p className="text-sm text-primary-200">Sponsorship and participation in RWA-organized events</p>
+                    <h3 className="font-semibold text-primary-300 mb-2">Event Sponsorship</h3>
+                    <p className="text-sm text-white">Sponsorship and participation in RWA-organized events</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
-                    <h3 className="font-semibold text-primary-300 mb-2">Brand Awareness Campaigns</h3>
-                    <p className="text-sm text-primary-200">Targeted marketing activities within residential complexes</p>
+                    <h3 className="font-semibold text-primary-300 mb-2">Community Activities</h3>
+                    <p className="text-sm text-white">Targeted marketing activities within residential complexes</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
-                    <h3 className="font-semibold text-primary-300 mb-2">Product Demonstrations</h3>
-                    <p className="text-sm text-primary-200">On-site product showcases and sampling activities</p>
+                    <h3 className="font-semibold text-primary-300 mb-2">Product Showcases</h3>
+                    <p className="text-sm text-white">On-site product showcases and sampling activities</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
-                    <h3 className="font-semibold text-primary-300 mb-2">Community Engagement</h3>
-                    <p className="text-sm text-primary-200">Building relationships through community service initiatives</p>
+                    <h3 className="font-semibold text-primary-300 mb-2">Community Service</h3>
+                    <p className="text-sm text-white">Building relationships through community service initiatives</p>
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Activity Types</h2>
+                <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">RWA Activity Types</h2>
                 <div className="bg-primary-900/50 border border-primary-800 p-6 rounded-lg mb-6">
-                  <ul className="space-y-2 text-primary-200">
+                  <ul className="space-y-2 text-white">
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
                       <span>Festival celebrations and cultural events</span>
@@ -95,25 +105,25 @@ export default function RWAActivitiesPage() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
-                      <span>Environmental awareness campaigns</span>
+                      <span>Community meetings and gatherings</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
-                      <span>Community service and CSR initiatives</span>
+                      <span>Environmental and social initiatives</span>
                     </li>
                   </ul>
                 </div>
 
                 <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Benefits</h2>
                 <div className="bg-primary-900/50 border border-primary-800 p-6 rounded-lg mb-6">
-                  <ul className="space-y-2 text-primary-200">
+                  <ul className="space-y-2 text-white">
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
-                      <span>Build trust and credibility within local communities</span>
+                      <span>Build trust and credibility within communities</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
-                      <span>Targeted reach to specific residential demographics</span>
+                      <span>Direct engagement with target residential audience</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
@@ -125,13 +135,13 @@ export default function RWAActivitiesPage() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
-                      <span>Positive brand association through community involvement</span>
+                      <span>Word-of-mouth marketing and referrals</span>
                     </li>
                   </ul>
                 </div>
 
-                <p className="text-primary-200">
-                  Partner with us to create meaningful RWA activities that connect your brand with local communities and drive engagement.
+                <p className="text-white">
+                  Contact us to explore RWA activity opportunities and connect with local communities effectively.
                 </p>
               </div>
             </div>

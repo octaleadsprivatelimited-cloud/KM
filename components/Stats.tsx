@@ -23,7 +23,6 @@ export default function Stats() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     
-    // Set counted to true immediately for SSR/hydration
     setCounted(true)
     
     const section = document.getElementById('stats')
@@ -66,7 +65,7 @@ export default function Stats() {
                 {stat.value}
                 {stat.suffix}
               </div>
-              <div className="text-primary-200 font-medium">{stat.label}</div>
+              <div className="text-white font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -7,13 +7,14 @@ import CTA from '@/components/CTA'
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-black">
+    <>
       <Hero />
       <Stats />
       <Services />
       <About />
       <Portfolio />
       <CTA />
-    </div>
+    </>
   )
 }
+

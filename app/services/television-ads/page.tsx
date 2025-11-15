@@ -1,4 +1,5 @@
 import SideContactForm from '@/components/SideContactForm'
+import Image from 'next/image'
 import { FiTv } from 'react-icons/fi'
 
 export const metadata = {
@@ -8,17 +9,23 @@ export const metadata = {
 
 export default function TelevisionAdsPage() {
   return (
-    <div className="w-full pt-24 pb-16 bg-black">
-      {/* Hero Image Section */}
-      <section className="relative h-64 bg-gradient-to-r from-primary-900 to-primary-800 mb-12">
-        <div className="absolute inset-0 bg-black/50"></div>
+    <div className="w-full pb-16 bg-black">
+      <section className="relative h-[500px] mb-12 overflow-hidden -mt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1920&q=80"
+          alt="Television Ads - Maximum Brand Reach & Impact"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <FiTv className="text-primary-400" size={48} />
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-300">Television Ads</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">Television Ads</h1>
             </div>
-            <p className="text-lg text-primary-200">Maximum Brand Reach & Impact</p>
+            <p className="text-lg text-white">Maximum Brand Reach & Impact</p>
           </div>
         </div>
       </section>
@@ -26,26 +33,29 @@ export default function TelevisionAdsPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-black border border-primary-800 rounded-lg shadow-md p-8">
-              {/* Service Image */}
+            <div className="bg-black border border-primary-800 rounded-lg p-8">
               <div className="mb-8">
-                <div className="relative w-full h-64 bg-gradient-to-br from-primary-900/50 to-primary-800/30 border border-primary-800 rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <FiTv className="text-primary-400" size={120} />
-                  </div>
+                <div className="relative w-full h-80 rounded-lg overflow-hidden border border-primary-800">
+                  <Image
+                    src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1200&q=80"
+                    alt="Television Advertising Solutions"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <p className="text-primary-200 text-sm font-medium">Television Advertising Solutions</p>
+                    <p className="text-white text-lg font-semibold">Television Advertising Solutions</p>
                   </div>
                 </div>
               </div>
 
               <div className="prose max-w-none">
-                <p className="text-lg text-primary-200 mb-6">
+                <p className="text-lg text-white mb-6">
                   Television advertising remains one of the most powerful mediums for reaching a mass audience. Our television advertising services help you create compelling video campaigns that capture attention, build brand awareness, and drive customer action across local and regional markets.
                 </p>
 
                 <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Why Choose Television Advertising?</h2>
-                <ul className="list-disc list-inside space-y-2 text-primary-200 mb-6">
+                <ul className="list-disc list-inside space-y-2 text-white mb-6">
                   <li>Massive reach across diverse demographics</li>
                   <li>High-impact visual and audio storytelling</li>
                   <li>Credibility and trust-building medium</li>
@@ -58,25 +68,25 @@ export default function TelevisionAdsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Commercial Production</h3>
-                    <p className="text-sm text-primary-200">Professional video production for TV commercials</p>
+                    <p className="text-sm text-white">Professional video production for TV commercials</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Creative Development</h3>
-                    <p className="text-sm text-primary-200">Concept development and scriptwriting for TV ads</p>
+                    <p className="text-sm text-white">Concept development and scriptwriting for TV ads</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Media Planning</h3>
-                    <p className="text-sm text-primary-200">Strategic placement across TV channels and time slots</p>
+                    <p className="text-sm text-white">Strategic placement across TV channels and time slots</p>
                   </div>
                   <div className="bg-primary-900/30 border border-primary-800 p-4 rounded-lg">
                     <h3 className="font-semibold text-primary-300 mb-2">Post-Production</h3>
-                    <p className="text-sm text-primary-200">Professional editing, graphics, and finalization</p>
+                    <p className="text-sm text-white">Professional editing, graphics, and finalization</p>
                   </div>
                 </div>
 
                 <h2 className="text-2xl font-bold text-primary-300 mt-8 mb-4">Benefits</h2>
                 <div className="bg-primary-900/50 border border-primary-800 p-6 rounded-lg mb-6">
-                  <ul className="space-y-2 text-primary-200">
+                  <ul className="space-y-2 text-white">
                     <li className="flex items-start">
                       <span className="text-primary-400 mr-2">✓</span>
                       <span>Maximum brand exposure to large audiences</span>
@@ -100,7 +110,7 @@ export default function TelevisionAdsPage() {
                   </ul>
                 </div>
 
-                <p className="text-primary-200">
+                <p className="text-white">
                   Partner with us to create television advertising campaigns that elevate your brand and drive measurable results.
                 </p>
               </div>

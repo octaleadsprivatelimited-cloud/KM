@@ -1,15 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: 'Katyani Media - Offline Marketing Agency',
-  description: 'Professional offline marketing solutions for your business growth',
-  keywords: 'marketing agency, offline marketing, advertising, brand promotion',
+  description: 'Katyani Media is a trusted offline marketing partner based in Hyderabad, delivering impactful street, society, and local campaigns across Telangana.',
+  keywords: 'marketing agency, offline marketing, advertising, brand promotion, Hyderabad, Telangana',
 }
 
 export default function RootLayout({
@@ -21,14 +18,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
       </head>
-      <body className={`${inter.className} bg-black text-primary-200 antialiased`} style={{ backgroundColor: '#000000', color: '#fde68a', margin: 0, padding: 0, minHeight: '100vh', width: '100%' }} suppressHydrationWarning>
-        <Header />
-        <main className="min-h-screen bg-black w-full" style={{ backgroundColor: '#000000', minHeight: '100vh', width: '100%' }}>
-          {children}
-        </main>
-        <Footer />
+      <body className="bg-white text-gray-900 antialiased" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }} suppressHydrationWarning>
+        <div id="root-layout" className="flex flex-col min-h-screen w-full">
+          <Header />
+          <main className="flex-1 w-full relative pt-16 lg:pt-16">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
 }
+

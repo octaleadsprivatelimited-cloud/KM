@@ -11,7 +11,7 @@ export default function CTA() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-300 mb-6">
             Ready to Transform Your Marketing?
           </h2>
-          <p className="text-lg sm:text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-white mb-8 max-w-2xl mx-auto">
             Let's work together to create powerful offline marketing campaigns that drive real results for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

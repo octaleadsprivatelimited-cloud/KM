@@ -2,49 +2,96 @@ export default function About() {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-300 mb-6">
-              About Katyani Media
-            </h2>
-            <p className="text-lg text-primary-200 mb-4 leading-relaxed">
-              With over 15 years of experience in the offline marketing industry, Katyani Media has established itself as a trusted partner for businesses seeking to expand their reach and connect with customers through traditional marketing channels.
+        {/* Main About Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-300 mb-6 text-center">
+            About Us
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-white mb-6 leading-relaxed">
+              As a process transformation company, we rethink and rebuild processes for the digital age by combining the speed and insight of design thinking with the scale and accuracy of data analytics. We rethink the process and work together to streamline it, rebuild it, and deliver it.
             </p>
-            <p className="text-lg text-primary-200 mb-4 leading-relaxed">
-              We specialize in creating impactful marketing campaigns that combine creativity with strategic thinking. Our team of experienced professionals understands the nuances of offline marketing and how to maximize ROI for our clients.
+            <p className="text-lg text-white mb-6 leading-relaxed">
+              At Katyani Media, we transform traditional marketing by blending street-smart creativity with real-time execution. We rethink how brands engage with communities, rebuild local connections, and deliver campaigns that create lasting impact in the physical world. We rethink how brands show up on the streets.
             </p>
-            <p className="text-lg text-primary-200 mb-6 leading-relaxed">
-              From brand promotion to event marketing, we offer end-to-end solutions that help businesses achieve their marketing goals and drive sustainable growth.
+            <p className="text-lg text-white mb-6 leading-relaxed">
+              Through precise targeting and community-driven campaigns, Katyani Media streamlines offline marketing processes to help businesses grow and connect with their audiences faster and smarter.
             </p>
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <h4 className="text-2xl font-bold text-primary-400 mb-2">15+</h4>
-                <p className="text-primary-200">Years Experience</p>
-              </div>
-              <div>
-                <h4 className="text-2xl font-bold text-primary-400 mb-2">500+</h4>
-                <p className="text-primary-200">Satisfied Clients</p>
-              </div>
-              <div>
-                <h4 className="text-2xl font-bold text-primary-400 mb-2">1000+</h4>
-                <p className="text-primary-200">Projects Done</p>
-              </div>
-              <div>
-                <h4 className="text-2xl font-bold text-primary-400 mb-2">50+</h4>
-                <p className="text-primary-200">Team Members</p>
-              </div>
+          </div>
+        </div>
+
+        {/* Key Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+            <h3 className="text-2xl font-bold text-primary-300 mb-3">Boost Your Business</h3>
+            <p className="text-white">
+              When it comes to sustainability and corporate responsibility, we believe the normal rules of business.
+            </p>
+          </div>
+          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+            <h3 className="text-2xl font-bold text-primary-300 mb-3">Filtering Business Data</h3>
+            <p className="text-white">
+              The industry has recognized us for our consistent endeavors to provide end-to-end customized solutions.
+            </p>
+          </div>
+          <div className="bg-black border border-primary-800 rounded-lg p-6 text-center">
+            <h3 className="text-2xl font-bold text-primary-300 mb-3">We Are Katyani Media</h3>
+            <p className="text-white">
+              Your Trusted Partner in Experiential Advertising
+            </p>
+          </div>
+        </div>
+
+        {/* Key Features */}
+        <div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-300 mb-12 text-center">
+            Why Choose Us
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-black border border-primary-800 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary-300 mb-3">Campaign Innovation</h3>
+              <p className="text-white text-sm">
+                We build bold, creative, on-ground brand moments that stand out and inspire across cities.
+              </p>
+            </div>
+            <div className="bg-black border border-primary-800 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary-300 mb-3">Real-Time Execution</h3>
+              <p className="text-white text-sm">
+                We track each campaign live and activate on time with strong, dedicated ground teams.
+              </p>
+            </div>
+            <div className="bg-black border border-primary-800 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary-300 mb-3">Audience-Centric Approach</h3>
+              <p className="text-white text-sm">
+                We create powerful messages that connect with real people in real places for real impact.
+              </p>
+            </div>
+            <div className="bg-black border border-primary-800 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-primary-300 mb-3">Scalable Reach</h3>
+              <p className="text-white text-sm">
+                We scale activations quickly and consistently from one area to hundreds of cities with ease.
+              </p>
             </div>
           </div>
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary-900/50 to-primary-800/30 border border-primary-800 rounded-lg p-8 h-full min-h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-primary-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-black text-4xl font-bold">KM</span>
-                </div>
-                <h3 className="text-2xl font-bold text-primary-300 mb-2">Katyani Media</h3>
-                <p className="text-primary-200">Your Marketing Partner</p>
-              </div>
-            </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <h4 className="text-2xl font-bold text-primary-400 mb-2">2017</h4>
+            <p className="text-white">Founded</p>
+          </div>
+          <div className="text-center">
+            <h4 className="text-2xl font-bold text-primary-400 mb-2">7+</h4>
+            <p className="text-white">Years Experience</p>
+          </div>
+          <div className="text-center">
+            <h4 className="text-2xl font-bold text-primary-400 mb-2">11-50</h4>
+            <p className="text-white">Team Members</p>
+          </div>
+          <div className="text-center">
+            <h4 className="text-2xl font-bold text-primary-400 mb-2">500+</h4>
+            <p className="text-white">Projects Done</p>
           </div>
         </div>
       </div>

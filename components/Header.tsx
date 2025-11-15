@@ -2,155 +2,289 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi'
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 10)
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false)
+      if (activeDropdown) {
+        const activeRef = dropdownRefs.current[activeDropdown]
+        if (activeRef && !activeRef.contains(event.target as Node)) {
+          setActiveDropdown(null)
+        }
       }
     }
 
-    if (isServicesOpen) {
-      // Add event listener after a small delay to prevent immediate closing
+    if (activeDropdown) {
       const timeoutId = setTimeout(() => {
         document.addEventListener('mousedown', handleClickOutside)
-      }, 10)
+      }, 50)
 
       return () => {
         clearTimeout(timeoutId)
         document.removeEventListener('mousedown', handleClickOutside)
       }
     }
-  }, [isServicesOpen])
-
-  const services = [
-    { href: '/services/bus-advertising', label: 'Bus Advertising' },
-    { href: '/services/cycle-advertising', label: 'Cycle Advertising' },
-    { href: '/services/radio-ads', label: 'Radio Ads' },
-    { href: '/services/pamphlet-distribution', label: 'Pamphlet Distribution' },
-    { href: '/services/corporate-events', label: 'Corporate Events' },
-    { href: '/services/gate-board', label: 'Gate Board' },
-    { href: '/services/television-ads', label: 'Television Ads' },
-    { href: '/services/metro-advertising', label: 'Metro Advertising' },
-    { href: '/services/look-walker', label: 'Look Walker' },
-    { href: '/services/rwa-activities', label: 'RWA Activities' },
-  ]
+  }, [activeDropdown])
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' },
+    {
+      label: 'Home',
+      href: '/',
+      hasDropdown: false,
+    },
+    {
+      label: 'About',
+      href: '/about',
+      hasDropdown: false,
+    },
+    {
+      label: 'Services',
+      href: '/services',
+      hasDropdown: true,
+      dropdownItems: [
+        { label: 'All Services', href: '/services' },
+        { label: 'Bus Advertising', href: '/services/bus-advertising' },
+        { label: 'Cycle Advertising', href: '/services/cycle-advertising' },
+        { label: 'Radio Ads', href: '/services/radio-ads' },
+        { label: 'Television Ads', href: '/services/television-ads' },
+        { label: 'Metro Advertising', href: '/services/metro-advertising' },
+        { label: 'Corporate Events', href: '/services/corporate-events' },
+        { label: 'Gate Board', href: '/services/gate-board' },
+        { label: 'Pamphlet Distribution', href: '/services/pamphlet-distribution' },
+        { label: 'Look Walker', href: '/services/look-walker' },
+        { label: 'RWA Activities', href: '/services/rwa-activities' },
+        { label: 'Political Campaign', href: '/services/political-campaign' },
+      ],
+    },
+    {
+      label: 'Portfolio',
+      href: '/portfolio',
+      hasDropdown: false,
+    },
+    {
+      label: 'Team',
+      href: '/team',
+      hasDropdown: false,
+    },
+    {
+      label: 'Testimonials',
+      href: '/testimonials',
+      hasDropdown: false,
+    },
+    {
+      label: 'Blog',
+      href: '/blog',
+      hasDropdown: false,
+    },
+    {
+      label: 'Contact',
+      href: '/contact',
+      hasDropdown: false,
+    },
   ]
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-black shadow-lg py-2 border-b border-primary-600'
-          : 'bg-black/90 backdrop-blur-sm py-4'
+      className={`fixed top-0 left-0 right-0 z-50 w-full bg-black transition-all duration-200 ${
+        isScrolled ? 'shadow-sm' : ''
       }`}
+      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold text-primary-400 hover:text-primary-300 transition-colors"
+            className="flex items-center"
           >
-            Katyani Media
+            <Image
+              src="/logo.png"
+              alt="Katyani Media"
+              width={200}
+              height={60}
+              className="h-14 w-auto object-contain"
+              priority
+            />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Deloitte style */}
+          <div className="hidden lg:flex items-center" style={{ gap: '8px' }}>
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary-400 text-primary-200"
-              >
-                {item.label}
-              </Link>
-            ))}
-            
-            {/* Services Dropdown */}
-            <div 
-              className="relative" 
-              ref={dropdownRef}
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setIsServicesOpen(!isServicesOpen)
+              <div
+                key={item.label}
+                className="relative"
+                ref={(el) => {
+                  if (item.hasDropdown) {
+                    dropdownRefs.current[item.label] = el
+                  }
                 }}
-                className="text-sm font-medium transition-colors hover:text-primary-400 flex items-center space-x-1 text-primary-200"
-                aria-expanded={isServicesOpen}
-                aria-haspopup="true"
+                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
+                onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
-                <span>Services</span>
-                <FiChevronDown className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} size={16} />
-              </button>
-              
-              {isServicesOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-64 bg-black border border-primary-600 rounded-lg shadow-xl py-2 z-[100]"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                >
-                  <Link
-                    href="/services"
-                    className="block px-4 py-2 text-sm text-primary-200 hover:bg-primary-900/50 hover:text-primary-400 transition-colors font-medium"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    All Services
-                  </Link>
-                  <div className="border-t border-primary-800 my-1"></div>
-                  {services.map((service) => (
-                    <Link
-                      key={service.href}
-                      href={service.href}
-                      className="block px-4 py-2 text-sm text-primary-300 hover:bg-primary-900/50 hover:text-primary-400 transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
+                {item.hasDropdown ? (
+                  <>
+                    <button
+                      type="button"
+                      className="flex items-center"
+                      style={{
+                        padding: '8px 16px',
+                        fontSize: '14px',
+                        fontWeight: 400,
+                        color: '#ffffff',
+                        transition: 'color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#0065ff'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#ffffff'
+                      }}
+                      onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
                     >
-                      {service.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                      <span>{item.label}</span>
+                      <FiChevronDown
+                        className="ml-1"
+                        style={{
+                          transform: activeDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.2s ease',
+                        }}
+                        size={14}
+                      />
+                    </button>
+                    {activeDropdown === item.label && (
+                      <div
+                        className="absolute top-full left-0 mt-0"
+                        style={{
+                          width: '240px',
+                          backgroundColor: '#ffffff',
+                          border: '1px solid #e5e7eb',
+                          borderRadius: '4px',
+                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                          padding: '8px 0',
+                          zIndex: 50,
+                        }}
+                      >
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.href}
+                            href={dropdownItem.href}
+                            className="block"
+                            style={{
+                              padding: '10px 16px',
+                              fontSize: '14px',
+                              fontWeight: 400,
+                              color: '#1a1a1a',
+                              transition: 'background-color 0.15s ease, color 0.15s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#f3f4f6'
+                              e.currentTarget.style.color = '#0065ff'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent'
+                              e.currentTarget.style.color = '#1a1a1a'
+                            }}
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block"
+                    style={{
+                      padding: '8px 16px',
+                      fontSize: '14px',
+                      fontWeight: 400,
+                      color: '#ffffff',
+                      transition: 'color 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#0065ff'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#ffffff'
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
 
+          {/* Right Side Actions - Deloitte style */}
+          <div className="hidden lg:flex items-center" style={{ gap: '16px' }}>
+            <button
+              type="button"
+              className="flex items-center"
+              style={{
+                padding: '8px 12px',
+                fontSize: '14px',
+                fontWeight: 400,
+                color: '#ffffff',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#0065ff'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#ffffff'
+              }}
+            >
+              <span>GLOBAL - EN</span>
+            </button>
             <Link
               href="/contact"
-              className="bg-primary-500 text-black px-6 py-2 rounded-full hover:bg-primary-400 transition-colors font-medium font-semibold"
+              className="inline-block"
+              style={{
+                padding: '8px 20px',
+                fontSize: '14px',
+                fontWeight: 500,
+                color: '#ffffff',
+                backgroundColor: '#0065ff',
+                borderRadius: '4px',
+                transition: 'background-color 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#0052cc'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#0065ff'
+              }}
             >
-              Get Started
+              Let's Connect
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-primary-200"
+            className="lg:hidden p-2"
+            style={{ color: '#ffffff' }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -160,67 +294,135 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 bg-black border border-primary-600 rounded-lg shadow-lg">
-            <div className="flex flex-col space-y-4 px-4">
+          <div
+            className="lg:hidden border-t"
+            style={{
+              borderColor: '#333333',
+              paddingTop: '8px',
+              paddingBottom: '8px',
+            }}
+          >
+            <div className="flex flex-col" style={{ gap: '2px' }}>
               {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.hasDropdown ? (
+                    <>
+                      <button
+                        type="button"
+                        className="w-full flex items-center justify-between"
+                        style={{
+                          padding: '10px 16px',
+                          fontSize: '14px',
+                          fontWeight: 400,
+                          color: '#ffffff',
+                          transition: 'background-color 0.15s ease',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#333333'
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent'
+                        }}
+                        onClick={() =>
+                          setActiveDropdown(activeDropdown === item.label ? null : item.label)
+                        }
+                      >
+                        <span>{item.label}</span>
+                        <FiChevronDown
+                          style={{
+                            transform: activeDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
+                            transition: 'transform 0.2s ease',
+                          }}
+                          size={16}
+                        />
+                      </button>
+                      {activeDropdown === item.label && (
+                        <div style={{ paddingLeft: '16px', marginTop: '2px' }}>
+                          {item.dropdownItems?.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.href}
+                              href={dropdownItem.href}
+                              className="block"
+                              style={{
+                                padding: '8px 16px',
+                                fontSize: '14px',
+                                fontWeight: 400,
+                                color: '#cccccc',
+                                transition: 'background-color 0.15s ease, color 0.15s ease',
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.backgroundColor = '#333333'
+                                e.currentTarget.style.color = '#0065ff'
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = 'transparent'
+                                e.currentTarget.style.color = '#cccccc'
+                              }}
+                              onClick={() => {
+                                setIsMenuOpen(false)
+                                setActiveDropdown(null)
+                              }}
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block"
+                      style={{
+                        padding: '10px 16px',
+                        fontSize: '14px',
+                        fontWeight: 400,
+                        color: '#ffffff',
+                        transition: 'background-color 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#333333'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent'
+                      }}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div
+                style={{
+                  paddingTop: '8px',
+                  marginTop: '8px',
+                  borderTop: '1px solid #333333',
+                }}
+              >
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-primary-200 font-medium hover:text-primary-400 transition-colors py-2"
+                  href="/contact"
+                  className="block w-full text-center"
+                  style={{
+                    padding: '10px 24px',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#ffffff',
+                    backgroundColor: '#0065ff',
+                    borderRadius: '4px',
+                    transition: 'background-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#0052cc'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#0065ff'
+                  }}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  Let's Connect
                 </Link>
-              ))}
-              
-              {/* Mobile Services Dropdown */}
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="text-primary-200 font-medium hover:text-primary-400 transition-colors py-2 flex items-center justify-between w-full"
-                  aria-expanded={isMobileServicesOpen}
-                >
-                  <span>Services</span>
-                  <FiChevronDown className={`transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} size={16} />
-                </button>
-                
-                {isMobileServicesOpen && (
-                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-primary-600">
-                    <Link
-                      href="/services"
-                      className="block text-primary-300 hover:text-primary-400 transition-colors py-1 text-sm font-medium"
-                      onClick={() => {
-                        setIsMenuOpen(false)
-                        setIsMobileServicesOpen(false)
-                      }}
-                    >
-                      All Services
-                    </Link>
-                    {services.map((service) => (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        className="block text-primary-300 hover:text-primary-400 transition-colors py-1 text-sm"
-                        onClick={() => {
-                          setIsMenuOpen(false)
-                          setIsMobileServicesOpen(false)
-                        }}
-                      >
-                        {service.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
-
-              <Link
-                href="/contact"
-                className="bg-primary-500 text-black px-6 py-2 rounded-full hover:bg-primary-400 transition-colors font-medium text-center font-semibold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
-              </Link>
             </div>
           </div>
         )}
@@ -228,4 +430,3 @@ export default function Header() {
     </header>
   )
 }
-
