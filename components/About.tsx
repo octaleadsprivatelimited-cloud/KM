@@ -82,7 +82,7 @@ export default function About() {
             <p className="text-white">Founded</p>
           </div>
           <div className="text-center">
-            <h4 className="text-2xl font-bold text-primary-400 mb-2">7+</h4>
+            <h4 className="text-2xl font-bold text-primary-400 mb-2">9+</h4>
             <p className="text-white">Years Experience</p>
           </div>
           <div className="text-center">

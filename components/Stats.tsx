@@ -14,7 +14,7 @@ const stats: Stat[] = [
   { icon: <FiUsers size={40} />, value: '500', suffix: '+', label: 'Happy Clients' },
   { icon: <FiAward size={40} />, value: '1000', suffix: '+', label: 'Projects Completed' },
   { icon: <FiTrendingUp size={40} />, value: '95', suffix: '%', label: 'Success Rate' },
-  { icon: <FiCheckCircle size={40} />, value: '15', suffix: '+', label: 'Years Experience' },
+  { icon: <FiCheckCircle size={40} />, value: '9', suffix: '+', label: 'Years Experience' },
 ]
 
 export default function Stats() {
