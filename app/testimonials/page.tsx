@@ -1,9 +1,21 @@
 import Image from 'next/image'
 import { FiStar } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Testimonials - Katyani Media',
-  description: 'Read what our clients say about Katyani Media and our exceptional marketing services',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Testimonials',
+  description: 'Read client testimonials and reviews for Katyani Media - leading offline marketing agency in Hyderabad, Telangana. See what our 500+ satisfied clients say about our bus advertising, metro ads, corporate events, and marketing services.',
+  keywords: 'Katyani Media reviews, client testimonials Hyderabad, marketing agency reviews Telangana, customer feedback, advertising agency testimonials, marketing services reviews',
+  openGraph: {
+    title: 'Testimonials - Katyani Media | Client Reviews Hyderabad',
+    description: 'Read what our clients say about Katyani Media and our exceptional marketing services in Hyderabad.',
+    url: 'https://katyanimedia.com/testimonials',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/testimonials',
+  },
 }
 
 export default function TestimonialsPage() {

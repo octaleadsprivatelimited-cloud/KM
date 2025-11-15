@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiTv } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Television Ads - Katyani Media',
-  description: 'Professional television advertising services for maximum brand reach and impact',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Television Ads',
+  description: 'Professional television advertising services in Hyderabad, Telangana. Maximum brand reach and impact across local and regional TV channels. TV commercial production, ad placement, and media buying services. Contact Katyani Media.',
+  keywords: 'television advertising Hyderabad, TV ads Telangana, TV commercial production, television ad placement, media buying services, regional TV advertising, TV marketing campaigns',
+  openGraph: {
+    title: 'Television Advertising Services - Katyani Media | Hyderabad',
+    description: 'Professional television advertising services for maximum brand reach and impact across local and regional markets in Hyderabad.',
+    url: 'https://katyanimedia.com/services/television-ads',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/television-ads',
+  },
 }
 
 export default function TelevisionAdsPage() {

@@ -179,7 +179,7 @@ export default function Footer() {
               </div>
               <div>
                 <h5 className="text-primary-300 font-semibold mb-1 text-sm uppercase">Address</h5>
-                <p className="text-white/80 text-sm leading-relaxed">T-HUB 2.0, Vittal Rao Nagar, Hyderabad, Telangana 500081</p>
+                <p className="text-white/80 text-sm leading-relaxed">T-Hub 2.0, Inorbit Mall Rd, Vittal Rao Nagar, Madhapur, Hyderabad, Telangana 500032</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">

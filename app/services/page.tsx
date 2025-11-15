@@ -1,9 +1,21 @@
 import Services from '@/components/Services'
 import Image from 'next/image'
 
-export const metadata = {
-  title: 'Services - Katyani Media',
-  description: 'Comprehensive offline marketing solutions tailored to your business needs',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description: 'Comprehensive offline marketing services in Hyderabad, Telangana. Bus advertising, metro ads, corporate events, pamphlet distribution, political campaigns, gate board advertising, cycle advertising, radio & TV ads, RWA activities, and look walker services. Expert marketing solutions in Madhapur.',
+  keywords: 'offline marketing services Hyderabad, bus advertising, metro advertising, corporate events Hyderabad, pamphlet distribution, political campaigns Telangana, gate board advertising, cycle advertising, radio ads, television ads, RWA activities, look walker advertising, marketing services Madhapur',
+  openGraph: {
+    title: 'Our Services - Katyani Media | Offline Marketing Services Hyderabad',
+    description: 'Comprehensive offline marketing services in Hyderabad including bus advertising, metro ads, corporate events, and more. Expert solutions for your business.',
+    url: 'https://katyanimedia.com/services',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services',
+  },
 }
 
 export default function ServicesPage() {

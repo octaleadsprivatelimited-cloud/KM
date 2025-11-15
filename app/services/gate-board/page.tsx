@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiLayers } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Gate Board - Katyani Media',
-  description: 'Professional gate board advertising solutions for high-visibility brand promotion',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Gate Board Advertising',
+  description: 'Professional gate board advertising services in Hyderabad, Telangana. High-visibility entry point advertising at residential complexes, commercial buildings, and public spaces. Strategic placement for maximum brand exposure. Contact Katyani Media.',
+  keywords: 'gate board advertising Hyderabad, entry point advertising Telangana, residential gate boards, commercial gate boards, strategic advertising placement, high-visibility advertising',
+  openGraph: {
+    title: 'Gate Board Advertising Services - Katyani Media | Hyderabad',
+    description: 'Professional gate board advertising solutions for high-visibility brand promotion at strategic entry points in Hyderabad.',
+    url: 'https://katyanimedia.com/services/gate-board',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/gate-board',
+  },
 }
 
 export default function GateBoardPage() {

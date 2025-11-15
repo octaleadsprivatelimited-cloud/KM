@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiFileText } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Pamphlet Distribution - Katyani Media',
-  description: 'Professional pamphlet distribution services for targeted local marketing campaigns',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pamphlet Distribution',
+  description: 'Professional pamphlet distribution services in Hyderabad, Telangana. Targeted local marketing campaigns reaching 50K+ households. Direct customer engagement, door-to-door distribution, and flyer marketing solutions. Contact Katyani Media.',
+  keywords: 'pamphlet distribution Hyderabad, flyer distribution Telangana, door-to-door marketing, leaflet distribution, direct marketing services, pamphlet marketing, local distribution services',
+  openGraph: {
+    title: 'Pamphlet Distribution Services - Katyani Media | Hyderabad',
+    description: 'Professional pamphlet distribution services for targeted local marketing campaigns in Hyderabad, Telangana.',
+    url: 'https://katyanimedia.com/services/pamphlet-distribution',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/pamphlet-distribution',
+  },
 }
 
 export default function PamphletDistributionPage() {

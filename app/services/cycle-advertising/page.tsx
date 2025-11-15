@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiActivity } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Cycle Advertising - Katyani Media',
-  description: 'Eco-friendly cycle advertising solutions for targeted local marketing campaigns',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Cycle Advertising',
+  description: 'Eco-friendly cycle advertising services in Hyderabad, Telangana. Mobile brand promotion, targeted local marketing campaigns, and sustainable advertising solutions. Perfect for events, festivals, and community engagement. Contact Katyani Media.',
+  keywords: 'cycle advertising Hyderabad, eco-friendly advertising Telangana, bicycle advertising, mobile advertising, sustainable marketing, cycle branding, green advertising Hyderabad',
+  openGraph: {
+    title: 'Cycle Advertising Services - Katyani Media | Hyderabad',
+    description: 'Eco-friendly cycle advertising solutions for targeted local marketing campaigns in Hyderabad, Telangana.',
+    url: 'https://katyanimedia.com/services/cycle-advertising',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/cycle-advertising',
+  },
 }
 
 export default function CycleAdvertisingPage() {

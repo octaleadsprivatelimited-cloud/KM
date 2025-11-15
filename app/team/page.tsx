@@ -1,8 +1,20 @@
 import Image from 'next/image'
 
-export const metadata = {
-  title: 'Our Team - Katyani Media',
-  description: 'Meet the talented team behind Katyani Media - dedicated professionals committed to your marketing success',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Team',
+  description: 'Meet the talented team behind Katyani Media - dedicated marketing professionals in Hyderabad, Telangana. Led by Founder & CEO Santhosh Reddy Ch and HR Manager Ruchitha Reddy. Expert team committed to your marketing success.',
+  keywords: 'Katyani Media team, marketing team Hyderabad, advertising professionals Telangana, marketing experts, offline marketing specialists, marketing agency team',
+  openGraph: {
+    title: 'Our Team - Katyani Media | Marketing Professionals Hyderabad',
+    description: 'Meet the talented team behind Katyani Media - dedicated marketing professionals in Hyderabad.',
+    url: 'https://katyanimedia.com/team',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/team',
+  },
 }
 
 export default function TeamPage() {

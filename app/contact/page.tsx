@@ -1,9 +1,21 @@
 import Contact from '@/components/Contact'
 import Image from 'next/image'
 
-export const metadata = {
-  title: 'Contact Us - Katyani Media',
-  description: 'Get in touch with Katyani Media to discuss your marketing needs',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Contact Katyani Media - Leading offline marketing agency in Hyderabad, Telangana. Located at T-Hub 2.0, Madhapur. Call +91-9390809997 or email info@katyanimedia.com for bus advertising, metro ads, corporate events, and marketing solutions.',
+  keywords: 'contact Katyani Media, marketing agency contact Hyderabad, advertising agency Telangana, marketing services Madhapur, offline marketing contact, Katyani Media phone number, marketing agency email',
+  openGraph: {
+    title: 'Contact Us - Katyani Media | Offline Marketing Agency Hyderabad',
+    description: 'Get in touch with Katyani Media for expert offline marketing solutions in Hyderabad, Telangana. Located in Madhapur.',
+    url: 'https://katyanimedia.com/contact',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/contact',
+  },
 }
 
 export default function ContactPage() {

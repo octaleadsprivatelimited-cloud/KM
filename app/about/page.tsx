@@ -1,9 +1,21 @@
 import About from '@/components/About'
 import Image from 'next/image'
 
-export const metadata = {
-  title: 'About Us - Katyani Media',
-  description: 'Katyani Media is a trusted offline marketing partner based in Hyderabad, delivering impactful street, society, and local campaigns across Telangana.',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Katyani Media - a leading offline marketing agency in Hyderabad, Telangana. Founded in 2017, we specialize in process transformation, street-smart creativity, and real-time execution. Serving 500+ clients with innovative marketing solutions in Madhapur, Hyderabad.',
+  keywords: 'about Katyani Media, marketing agency Hyderabad, offline marketing company Telangana, advertising agency Madhapur, marketing team Hyderabad, process transformation company',
+  openGraph: {
+    title: 'About Us - Katyani Media | Offline Marketing Agency Hyderabad',
+    description: 'Learn about Katyani Media - leading offline marketing agency in Hyderabad. Founded in 2017, trusted by 500+ clients across Telangana.',
+    url: 'https://katyanimedia.com/about',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/about',
+  },
 }
 
 export default function AboutPage() {

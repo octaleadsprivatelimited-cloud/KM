@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiNavigation } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Metro Advertising - Katyani Media',
-  description: 'Strategic metro advertising solutions to reach commuters and urban audiences',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Metro Advertising',
+  description: 'Strategic metro advertising services in Hyderabad, Telangana. High-traffic metro station advertising placement to reach urban commuters. Metro rail advertising, station branding, and transit marketing solutions. Contact Katyani Media.',
+  keywords: 'metro advertising Hyderabad, metro station advertising Telangana, metro rail ads, transit advertising, metro branding Hyderabad, public transport advertising, metro ad placement',
+  openGraph: {
+    title: 'Metro Advertising Services - Katyani Media | Hyderabad Metro',
+    description: 'Strategic metro advertising solutions to reach commuters and urban audiences in Hyderabad, Telangana.',
+    url: 'https://katyanimedia.com/services/metro-advertising',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/metro-advertising',
+  },
 }
 
 export default function MetroAdvertisingPage() {

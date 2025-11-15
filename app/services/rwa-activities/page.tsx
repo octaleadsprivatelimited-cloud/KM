@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiUsers } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'RWA Activities - Katyani Media',
-  description: 'Resident Welfare Association (RWA) marketing and engagement activities for local brand promotion',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'RWA Activities',
+  description: 'Resident Welfare Association (RWA) marketing and engagement activities in Hyderabad, Telangana. Community engagement programs, local brand promotion, society marketing, and residential area advertising. Build connections with local communities. Contact Katyani Media.',
+  keywords: 'RWA activities Hyderabad, resident welfare association marketing, community engagement Telangana, society marketing, residential area advertising, local community marketing',
+  openGraph: {
+    title: 'RWA Activities & Community Marketing - Katyani Media | Hyderabad',
+    description: 'Resident Welfare Association (RWA) marketing and engagement activities for local brand promotion in Hyderabad.',
+    url: 'https://katyanimedia.com/services/rwa-activities',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/rwa-activities',
+  },
 }
 
 export default function RWAActivitiesPage() {

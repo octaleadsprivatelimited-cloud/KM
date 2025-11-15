@@ -2,9 +2,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FiCalendar, FiUser, FiArrowRight } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Blog - Katyani Media',
-  description: 'Latest insights, tips, and trends in offline marketing from Katyani Media',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Latest insights, tips, and trends in offline marketing from Katyani Media. Learn about bus advertising, metro ads, corporate events, and marketing strategies in Hyderabad, Telangana. Expert marketing blog for businesses.',
+  keywords: 'offline marketing blog, marketing tips Hyderabad, advertising insights Telangana, marketing trends, bus advertising guide, metro advertising tips, marketing strategies blog',
+  openGraph: {
+    title: 'Blog - Katyani Media | Offline Marketing Insights Hyderabad',
+    description: 'Latest insights, tips, and trends in offline marketing from Katyani Media.',
+    url: 'https://katyanimedia.com/blog',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/blog',
+  },
 }
 
 export default function BlogPage() {

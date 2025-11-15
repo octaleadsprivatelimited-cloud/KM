@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiTruck } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Bus Advertising - Katyani Media',
-  description: 'Effective bus advertising solutions to reach a wide audience and maximize brand visibility',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Bus Advertising',
+  description: 'Professional bus advertising services in Hyderabad, Telangana. Full bus wrap, side panel, back panel, and interior bus advertising solutions. Reach 500K+ daily commuters. Cost-effective advertising for maximum brand visibility. Contact Katyani Media in Madhapur.',
+  keywords: 'bus advertising Hyderabad, bus wrap advertising Telangana, bus advertising services, transit advertising Hyderabad, bus ad placement, outdoor bus advertising, bus branding Hyderabad, public transport advertising',
+  openGraph: {
+    title: 'Bus Advertising Services - Katyani Media | Hyderabad, Telangana',
+    description: 'Professional bus advertising services in Hyderabad. Full bus wrap, side panel, and interior advertising solutions for maximum brand visibility.',
+    url: 'https://katyanimedia.com/services/bus-advertising',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/bus-advertising',
+  },
 }
 
 export default function BusAdvertisingPage() {

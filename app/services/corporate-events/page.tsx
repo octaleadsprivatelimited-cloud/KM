@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiCalendar } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Corporate Events - Katyani Media',
-  description: 'Complete corporate event management and marketing services for successful business gatherings',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Corporate Events',
+  description: 'Complete corporate event management and marketing services in Hyderabad, Telangana. Professional event planning, brand launches, conferences, seminars, and business gatherings. Full-service event marketing for 2000+ attendees. Contact Katyani Media.',
+  keywords: 'corporate events Hyderabad, event management Telangana, corporate event planning, business events, brand launch events, conference management, event marketing services Hyderabad',
+  openGraph: {
+    title: 'Corporate Event Management - Katyani Media | Hyderabad',
+    description: 'Complete corporate event management and marketing services for successful business gatherings in Hyderabad.',
+    url: 'https://katyanimedia.com/services/corporate-events',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/corporate-events',
+  },
 }
 
 export default function CorporateEventsPage() {

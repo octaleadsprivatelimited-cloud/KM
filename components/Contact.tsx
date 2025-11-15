@@ -71,7 +71,7 @@ export default function Contact() {
               <FiMapPin className="text-primary-400 group-hover:text-primary-300" size={20} />
             </div>
             <p className="text-primary-400 text-sm mb-1">Address</p>
-            <p className="text-white font-medium text-xs">T-HUB 2.0, Hyderabad</p>
+            <p className="text-white font-medium text-xs">T-Hub 2.0, Inorbit Mall Rd, Vittal Rao Nagar, Madhapur, Hyderabad, Telangana 500032</p>
           </div>
         </div>
 

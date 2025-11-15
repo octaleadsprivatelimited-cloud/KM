@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiRadio } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Radio Ads - Katyani Media',
-  description: 'Professional radio advertising services to reach your target audience through audio marketing',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Radio Ads',
+  description: 'Professional radio advertising services in Hyderabad, Telangana. Multi-channel radio ad campaigns across major stations with 95% reach. Compelling audio marketing to reach your target audience. Contact Katyani Media for radio ad solutions.',
+  keywords: 'radio advertising Hyderabad, radio ads Telangana, audio advertising, radio commercial production, radio ad placement, FM radio advertising, radio marketing campaigns Hyderabad',
+  openGraph: {
+    title: 'Radio Advertising Services - Katyani Media | Hyderabad',
+    description: 'Professional radio advertising services to reach your target audience through compelling audio marketing in Hyderabad.',
+    url: 'https://katyanimedia.com/services/radio-ads',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/radio-ads',
+  },
 }
 
 export default function RadioAdsPage() {

@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiUser } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Look Walker - Katyani Media',
-  description: 'Human billboard and look walker advertising services for maximum brand visibility',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Look Walker Advertising',
+  description: 'Human billboard and look walker advertising services in Hyderabad, Telangana. Maximum brand visibility with mobile advertising, street marketing, and memorable brand interactions. Perfect for events, launches, and high-traffic areas. Contact Katyani Media.',
+  keywords: 'look walker advertising Hyderabad, human billboard Telangana, mobile advertising, street marketing, walking billboard, brand ambassador services, promotional walkers',
+  openGraph: {
+    title: 'Look Walker Advertising Services - Katyani Media | Hyderabad',
+    description: 'Human billboard and look walker advertising services for maximum brand visibility in Hyderabad, Telangana.',
+    url: 'https://katyanimedia.com/services/look-walker',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/look-walker',
+  },
 }
 
 export default function LookWalkerPage() {

@@ -1,9 +1,21 @@
 import Portfolio from '@/components/Portfolio'
 import Image from 'next/image'
 
-export const metadata = {
-  title: 'Portfolio - Katyani Media',
-  description: 'Explore our successful marketing campaigns and client projects',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description: 'Explore Katyani Media portfolio - successful marketing campaigns and client projects in Hyderabad, Telangana. Bus advertising campaigns, corporate events, radio ads, metro station campaigns, pamphlet distribution, and cycle advertising initiatives. See our 500+ completed projects.',
+  keywords: 'Katyani Media portfolio, marketing campaigns Hyderabad, advertising projects Telangana, bus advertising campaigns, corporate event marketing, metro advertising campaigns, successful marketing case studies',
+  openGraph: {
+    title: 'Our Portfolio - Katyani Media | Marketing Campaigns Hyderabad',
+    description: 'Explore successful marketing campaigns and client projects by Katyani Media in Hyderabad, Telangana.',
+    url: 'https://katyanimedia.com/portfolio',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/portfolio',
+  },
 }
 
 export default function PortfolioPage() {

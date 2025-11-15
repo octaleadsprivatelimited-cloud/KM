@@ -2,9 +2,21 @@ import SideContactForm from '@/components/SideContactForm'
 import Image from 'next/image'
 import { FiUsers } from 'react-icons/fi'
 
-export const metadata = {
-  title: 'Political Campaign - Katyani Media',
-  description: 'Comprehensive political campaign management and marketing services for effective voter outreach and engagement',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Political Campaign Management',
+  description: 'Comprehensive political campaign management and marketing services in Hyderabad, Telangana. Effective voter outreach, campaign strategy, poster design, rally management, and electoral marketing. Expert political campaign solutions. Contact Katyani Media.',
+  keywords: 'political campaign management Hyderabad, electoral marketing Telangana, voter outreach, campaign strategy, political advertising, election campaign services, political marketing',
+  openGraph: {
+    title: 'Political Campaign Management - Katyani Media | Telangana',
+    description: 'Comprehensive political campaign management and marketing services for effective voter outreach and engagement in Telangana.',
+    url: 'https://katyanimedia.com/services/political-campaign',
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://katyanimedia.com/services/political-campaign',
+  },
 }
 
 export default function PoliticalCampaignPage() {
